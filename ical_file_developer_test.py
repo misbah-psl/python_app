@@ -6,7 +6,7 @@ import unittest
 """
 Program to display bin collection details
 Porgram takes input in format Y-m-d
-Returns scheduled of next bin collection
+Returns schedule of next bin collection
 
 """
 
