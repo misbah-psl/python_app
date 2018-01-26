@@ -31,7 +31,6 @@ def extractAndSortDates(file_name, user_date):
 
     date_list.sort()
     closest_date = getClosestDate(date_list, user_date)
-    print(closest_date)
     for component in ical_file.walk():
         if component.name == "VEVENT":
             if(component.get('DTSTART').dt == closest_date):
@@ -42,8 +41,12 @@ def extractAndSortDates(file_name, user_date):
 
 
 def getClosestDate(date_list,user_date):
+    nearest =[];
+    for date in date_list:
+        if date > user_date:
+            nearest.append(date)           
     
-    return min(date_list, key=lambda x: abs(x - user_date))
+    return nearest[0]
 
 """"validate date format"""
 def validateDate(user_date):
